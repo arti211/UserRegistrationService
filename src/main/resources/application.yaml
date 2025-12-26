@@ -1,0 +1,8 @@
+spring:
+  application:
+    name: UserRegistrationService
+mail-server:
+  host: arti-pc
+  port: 25
+
+

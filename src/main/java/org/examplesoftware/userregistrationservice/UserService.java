@@ -16,7 +16,13 @@ public class UserService {
     }
 
  public void registerUser(User user){
-    userRepository.save(user);
-    notificationService.send("User: "+ user.getName() +" has been created. ", user.getEmail());
+    try {
+        userRepository.save(user);
+        notificationService.send("User: "+ user.getName() +" has been created. ", user.getEmail());
+    }
+    catch (Exception e) {
+        System.out.println("Error while saving user: " + e.getMessage());
+    }
+
  }
 }
